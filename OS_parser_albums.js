@@ -114,7 +114,11 @@ async function getPhotos(albums) {
 
     Promise.all(requests).then((responses) => {
         console.log('done');
-        fs.writeFile('albums.json', JSON.stringify(responses, null, 4), function (err) {
+        let result = {
+            albums: []
+        }
+        result.albums = JSON.parse(JSON.stringify(responses))
+        fs.writeFile('albums.json', JSON.stringify(result, null, 4), function (err) {
             if (err) console.error(err);
             else console.log('Data Saved to data.json file');
         });
