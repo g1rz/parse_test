@@ -91,6 +91,13 @@ async function getPhotos(albums) {
             osmosis
                 .get(item.link)
                 .delay(5000)
+                .find('head')
+                .set({
+                    seo_title: 'title'
+                })
+                .data(function(data) {
+                    album.seo_title = data.seo_title
+                })
                 .find('.pictures__item')
                 .set({
                     image: '.picture-item a @href',
