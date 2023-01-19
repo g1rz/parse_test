@@ -1,0 +1,17 @@
+{
+    "name": "parser_okraska_sten",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "parse": "node OS_parser_albums.js --trace-warnings"
+    },
+    "author": "g1rz",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^1.2.2",
+        "jsdom": "^21.0.0",
+        "node-fetch": "^3.3.0",
+        "osmosis": "^1.1.10"
+    }
+}
